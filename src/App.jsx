@@ -6,7 +6,6 @@ import {Testimonials} from "@/sections/Testimonials";
 import {Contact} from "@/sections/Contact";
 import {Navbar} from "@/layout/Navbar";
 
-
 function App() {
   return<div className="min-h-screen overflow-x-hidden"> 
   <Navbar />
