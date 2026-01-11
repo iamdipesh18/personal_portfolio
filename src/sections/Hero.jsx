@@ -22,6 +22,17 @@ const skills = [
   "Dart",
   "CapCut",
   "Figma",
+  "JavaScript",
+  "TypeScript",
+  "HTML5",
+  "CSS3",
+  "Tailwind CSS",
+  "Node.js",
+  "Express.js",
+  "MongoDB",
+  "SQL",
+  "RESTful APIs",
+  "Agile Methodologies",
 ];
 
 export const Hero = () => {
