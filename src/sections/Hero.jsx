@@ -106,11 +106,18 @@ export const Hero = () => {
                 Contact Me <ArrowRight className="w-5 h-5" />
               </Button>
 
-              {/* Download CV Button*/}
-              <AnimatedBorderButton>
-                <Download className="w-5 h-5" />
-                Download CV
-              </AnimatedBorderButton>
+              {/* Download CV Button */}
+              <a
+                href="./Dipesh_Dhungana_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AnimatedBorderButton>
+                  <Download className="w-5 h-5" />
+                  Download CV
+                </AnimatedBorderButton>
+              </a>
+
             </div>
 
             {/* Social Media Links */}
@@ -118,9 +125,9 @@ export const Hero = () => {
               <span className="text-sm text-muted-foreground">Follow me:</span>
 
               {[
-                { icon: Github, href: "#" },
-                { icon: Linkedin, href: "#" },
-                { icon: Twitter, href: "#" },
+                  { icon: Github, href: "https://github.com/iamdipesh18", label: "GitHub" },
+                  { icon: Linkedin, href: "https://www.linkedin.com/in/dipesh-dhungana-3796482b3/", label: "LinkedIn" },
+                  { icon: Twitter, href: "https://x.com/iamdipesh18", label: "Twitter" },
               ].map((social, index) => (
                 <a
                   key={index}
