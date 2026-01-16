@@ -38,7 +38,7 @@ const projects = [
         title: "Movie-Sansaar",
         description:"A flutter based mobile application powered by firebase and TMDB for the showing the movies and also playing trailer within the application.",
         image:"/Projects/Movie_Sansaar.png",
-        tags:["Html","css","flask","python","machine learning"],
+        tags:["Flutter", "Firebase", "Dart","TMDB","Mobile"],
         link:"#",
         githubb:"https://github.com/iamdipesh18/movie_sansaar_mobile",
     },
