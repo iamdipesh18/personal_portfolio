@@ -7,28 +7,28 @@ const testimonials = [
       "Dipesh is one of the most talented engineers I've worked with. His attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
     author: "Bibek Lamichhane",
     role: "Front-End Developer, OLE Nepal",
-    avatar: "/Bibek_Dai.jpg",
-  },
-    {
-    quote:
-      " His attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
-    author: "Bibek Lamichhane",
-    role: "Front-End Developer, OLE Nepal",
-    avatar: "/Bibek_Dai.jpg",
+    avatar: "/Testimonials/Bibek_Dai.jpg",
   },
     {
     quote:
       "Dipesh is one of the most talented engineers I've worked with. His attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
     author: "Bibek Lamichhane",
     role: "Front-End Developer, OLE Nepal",
-    avatar: "/Bibek_Dai.jpg",
+    avatar: "/Testimonials/Bibek_Dai.jpg",
   },
     {
     quote:
       "Dipesh is one of the most talented engineers I've worked with. His attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
     author: "Bibek Lamichhane",
     role: "Front-End Developer, OLE Nepal",
-    avatar: "/Bibek_Dai.jpg",
+    avatar: "/Testimonials/Bibek_Dai.jpg",
+  },
+    {
+    quote:
+      "Dipesh is one of the most talented engineers I've worked with. His attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
+    author: "Bibek Lamichhane",
+    role: "Front-End Developer, OLE Nepal",
+    avatar: "/Testimonials/Bibek_Dai.jpg",
   },
   
 ];

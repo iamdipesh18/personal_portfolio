@@ -13,34 +13,34 @@ const projects = [
       "A personal portfolio website to showcase my projects and skills.",
     image: "/Projects/Portfolio.png",
     tags: ["React", "Tailwind CSS", "JavaScript"],
-    link: "#",
-    githubb: "#",
+    link: "https://www.dhunganadipesh.com.np/",
+    githubb: "https://github.com/iamdipesh18/personal_portfolio",
   },
   {
-    title: "E-commerce Platform",
+    title: "D-Store",
     description:
       "A flutter-based e-commerce application with Firebase backend.",
-    image: "/Projects/Portfolio.png",
+    image: "/Projects/D_Store.png",
     tags: ["Flutter", "Firebase", "Dart"],
     link: "#",
-    githubb: "#",
+    githubb: "https://github.com/iamdipesh18/d_store",
   },
   {
     title: "Medivise",
     description:
-      "A healthcare app that connects patients with doctors for virtual consultations.",
-    image: "/Projects/Portfolio.png",
+      "A medicine recommendation system powered by Artificial Intelligence and Classifiers.",
+    image: "/Projects/Medivise.png",
     tags: ["Html", "css", "flask", "python", "machine learning"],
-    link: "#",
-    githubb: "#",
+    link: "https://medivise.onrender.com/",
+    githubb: "https://github.com/iamdipesh18/Medivise",
   },
     {
-        title: "Play-E",
-        description:"A PUBG KD predictor web app that uses machine learning to predict player performance based on historical data.",
-        image:"/Projects/Portfolio.png",
+        title: "Movie-Sansaar",
+        description:"A flutter based mobile application powered by firebase and TMDB for the showing the movies and also playing trailer within the application.",
+        image:"/Projects/Movie_Sansaar.png",
         tags:["Html","css","flask","python","machine learning"],
         link:"#",
-        githubb:"#",
+        githubb:"https://github.com/iamdipesh18/movie_sansaar_mobile",
     },
 ];
 
@@ -141,13 +141,20 @@ export const Projects = () => {
           ))}
         </div>
 
-        {/* View All Projects Button */}
-        <div className="text-center mt-12 animate-fade-in animation-delay-500">
-          <AnimatedBorderButton>
-            View All Projects
-            <ArrowUpRight className="w-5 h-5" />
-          </AnimatedBorderButton>
-        </div>
+{/* View All Projects Button */}
+<div className="text-center mt-12 animate-fade-in animation-delay-500">
+  <a 
+    href="https://github.com/iamdipesh18" 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <AnimatedBorderButton>
+      View All Projects
+      <ArrowUpRight className="w-5 h-5" />
+    </AnimatedBorderButton>
+  </a>
+</div>
+
       </div>
     </section>
   );
