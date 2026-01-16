@@ -4,31 +4,19 @@ import { useState } from "react";
 const testimonials = [
   {
     quote:
-      "Dipesh is one of the most talented engineers I've worked with. His attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
-    author: "Bibek Lamichhane",
-    role: "Front-End Developer, OLE Nepal",
-    avatar: "/Testimonials/Bibek_Dai.jpg",
+      "Dipesh has an incredible ability to bridge the gap between design and development. He brings UI/UX concepts to life seamlessly, ensuring that the user experience is both intuitive and visually appealing. His collaboration and responsiveness make every project run smoothly.",
+    author: "Arjun Bhattarai",
+    role: "UI/UX Designer, OLE Nepal",
+    avatar: "/Testimonials/Arjun.jpg",
+    linkedin:"https://www.linkedin.com/in/arjun-bhattarai-80a15a240/",
   },
     {
     quote:
-      "Dipesh is one of the most talented engineers I've worked with. His attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
+      "Working with Dipesh has been an absolute pleasure. His expertise in front-end development and his attention to detail make him stand out. He consistently delivers clean, maintainable code and turns complex ideas into smooth, user-friendly interfaces.",
     author: "Bibek Lamichhane",
     role: "Front-End Developer, OLE Nepal",
     avatar: "/Testimonials/Bibek_Dai.jpg",
-  },
-    {
-    quote:
-      "Dipesh is one of the most talented engineers I've worked with. His attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
-    author: "Bibek Lamichhane",
-    role: "Front-End Developer, OLE Nepal",
-    avatar: "/Testimonials/Bibek_Dai.jpg",
-  },
-    {
-    quote:
-      "Dipesh is one of the most talented engineers I've worked with. His attention to detail and ability to translate complex requirements into elegant solutions is remarkable.",
-    author: "Bibek Lamichhane",
-    role: "Front-End Developer, OLE Nepal",
-    avatar: "/Testimonials/Bibek_Dai.jpg",
+    linkedin:"https://www.linkedin.com/in/bibeklamichhane/",
   },
   
 ];
@@ -78,7 +66,15 @@ export const Testimonials = () => {
                   className="w-14 h-14 rounded-full object-cover ring-2 ring-primary/20"
                 />
                 <div>
-                  <div className="font-semibold">{testimonials[activeIdx].author}</div>
+                  <a
+  href={testimonials[activeIdx].linkedin}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="font-semibold text-primary hover:underline"
+>
+  {testimonials[activeIdx].author}
+</a>
+
                   <div className="text-sm text-muted-foreground">{testimonials[activeIdx].role}</div>
                 </div>
               </div>
