@@ -101,24 +101,26 @@ export const Hero = () => {
             </div>
 
             {/* Call To Action Buttons */}
-            <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
-                Contact Me <ArrowRight className="w-5 h-5" />
-              </Button>
+<div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
+  <a href="#contact">
+    <Button size="lg">
+      Contact Me <ArrowRight className="w-5 h-5" />
+    </Button>
+  </a>
 
-              {/* Download CV Button */}
-              <a
-                href="./Dipesh_Dhungana_CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AnimatedBorderButton>
-                  <Download className="w-5 h-5" />
-                  Download CV
-                </AnimatedBorderButton>
-              </a>
+  {/* Download CV Button */}
+  <a
+    href="./Dipesh_Dhungana_CV.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <AnimatedBorderButton>
+      <Download className="w-5 h-5" />
+      Download CV
+    </AnimatedBorderButton>
+  </a>
+</div>
 
-            </div>
 
             {/* Social Media Links */}
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
