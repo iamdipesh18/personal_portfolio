@@ -1,16 +1,18 @@
-import { Github, Linkedin, Twitter, Heart } from "lucide-react";
+import { Github, Linkedin, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
+import { profile } from "@/data/profile";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/iamdipesh18", label: "GitHub" },
-  { icon: Linkedin, href: "https://www.linkedin.com/in/dipesh-dhungana-3796482b3/", label: "LinkedIn" },
-  { icon: Twitter, href: "https://x.com/iamdipesh18", label: "Twitter" },
+  { icon: Github, href: profile.links.github, label: "GitHub" },
+  { icon: Linkedin, href: profile.links.linkedin, label: "LinkedIn" },
+  { icon: Twitter, href: profile.links.twitter, label: "Twitter" },
 ];
 
 const footerLinks = [
-  { href: "#about", label: "About" },
-  { href: "#projects", label: "Projects" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#about", label: "About" },
+  { href: "/projects", label: "All Projects" },
+  { href: "/experience", label: "Full Experience" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export const Footer = () => {
@@ -22,24 +24,24 @@ export const Footer = () => {
         <div className="flex flex-col md:flex-row items-center justify-between gap-8">
           {/* Logo & Copyright */}
           <div className="text-center md:text-left">
-            <a href="#" className="text-xl font-bold tracking-tight">
+            <Link to="/" className="text-xl font-bold tracking-tight">
               DD<span className="text-primary">.</span>
-            </a>
+            </Link>
             <p className="text-sm text-muted-foreground mt-2">
-              © {currentYear} Dipesh Dhungana. All rights reserved.
+              © {currentYear} {profile.name}. All rights reserved.
             </p>
           </div>
 
           {/* Links */}
           <nav className="flex flex-wrap justify-center gap-6">
             {footerLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 className="text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -49,6 +51,8 @@ export const Footer = () => {
               <a
                 key={social.label}
                 href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label={social.label}
                 className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all"
               >

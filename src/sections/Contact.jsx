@@ -9,6 +9,7 @@ import {
 import { Button } from "@/components/Button";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import { profile } from "@/data/profile";
 
 /* -------------------------------------------
    Static contact information
@@ -17,20 +18,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "dipeshdhungana2002@gmail.com",
-    href: "mailto:dipeshdhungana2002@gmail.com",
+    value: profile.email,
+    href: `mailto:${profile.email}`,
   },
-  {
+  ...profile.phones.map((phone) => ({
     icon: Phone,
-    label: "Phone",
-    value: "+977 9814136549",
-    href: "tel:+9779814136549",
-  },
+    label: `Phone (${phone.label})`,
+    value: phone.value,
+    href: phone.href,
+  })),
   {
     icon: MapPin,
     label: "Location",
-    value: "Sanepa, Lalitpur, Nepal",
-    href: "#",
+    value: profile.location,
   },
 ];
 
@@ -259,9 +259,11 @@ export const Contact = () => {
               </h3>
 
               <div className="space-y-4">
-                {contactInfo.map((item, index) => (
-                  <a
-                    key={index}
+                {contactInfo.map((item) => {
+                  const Tag = item.href ? "a" : "div";
+                  return (
+                  <Tag
+                    key={item.label}
                     href={item.href}
                     className="flex items-center gap-4 p-4 rounded-xl hover:bg-surface transition-colors group"
                   >
@@ -274,12 +276,13 @@ export const Contact = () => {
                       </div>
                       <div className="font-medium">{item.value}</div>
                     </div>
-                  </a>
-                ))}
+                  </Tag>
+                  );
+                })}
               </div>
             </div>
 
-            {/* Availability Card (Tutorial Accurate) */}
+            {/* Availability Card */}
             <div className="glass rounded-3xl p-8 border border-primary/30">
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />

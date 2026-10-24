@@ -1,48 +1,10 @@
-import { ArrowUpRight, Github } from "lucide-react";
+import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
 import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import { ProjectCard } from "@/components/ProjectCard";
+import { projects } from "@/data/projects";
 
-/*
-  Projects data array
-  -------------------
-  We map over this array to render each project card.
-*/
-const projects = [
-  {
-    title: "Portfolio Website",
-    description:
-      "A personal portfolio website to showcase my projects and skills.",
-    image: "/Projects/Portfolio.png",
-    tags: ["React", "Tailwind CSS", "JavaScript"],
-    link: "https://www.dhunganadipesh.com.np/",
-    githubb: "https://github.com/iamdipesh18/personal_portfolio",
-  },
-  {
-    title: "D-Store",
-    description:
-      "A flutter-based e-commerce application with Firebase backend.",
-    image: "/Projects/D_Store.png",
-    tags: ["Flutter", "Firebase", "Dart"],
-    link: "#",
-    githubb: "https://github.com/iamdipesh18/d_store",
-  },
-  {
-    title: "Medivise",
-    description:
-      "A medicine recommendation system powered by Artificial Intelligence and Classifiers.",
-    image: "/Projects/Medivise.png",
-    tags: ["Html", "css", "flask", "python", "machine learning"],
-    link: "https://medivise.onrender.com/",
-    githubb: "https://github.com/iamdipesh18/Medivise",
-  },
-    {
-        title: "Movie-Sansaar",
-        description:"A flutter based mobile application powered by firebase and TMDB for the showing the movies and also playing trailer within the application.",
-        image:"/Projects/Movie_Sansaar.png",
-        tags:["Flutter", "Firebase", "Dart","TMDB","Mobile"],
-        link:"#",
-        githubb:"https://github.com/iamdipesh18/movie_sansaar_mobile",
-    },
-];
+const featuredProjects = projects.filter((project) => project.featured);
 
 export const Projects = () => {
   return (
@@ -75,86 +37,20 @@ export const Projects = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className="group glass rounded-2xl overflow-hidden hover:scale-[1.02] transition-transform duration-300 animate-fade-in"
-              style={{ animationDelay: `${(index + 1) * 100}ms` }}
-            >
-              {/* Project Image */}
-              <div className="relative overflow-hidden aspect-video">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-
-                {/* Gradient overlay for readability */}
-                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60" />
-
-                {/* Hover overlay links */}
-                <div className="absolute inset-0 flex items-center justify-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a
-                    href={project.link}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <ArrowUpRight className="w-5 h-5" />
-                  </a>
-
-                  <a
-                    href={project.githubb}
-                    className="p-3 rounded-full glass hover:bg-primary hover:text-primary-foreground transition-all"
-                  >
-                    <Github className="w-5 h-5" />
-                  </a>
-                </div>
-              </div>
-
-              {/* Project Content */}
-              <div className="p-6 space-y-4">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-
-                  {/* Arrow icon animation on hover */}
-                  <ArrowUpRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 group-hover:translate-y-1 transition-all" />
-                </div>
-
-                <p className="text-muted-foreground text-sm">
-                  {project.description}
-                </p>
-
-                {/* Project tags */}
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span
-                      key={tagIndex}
-                      className="px-4 py-1.5 rounded-full bg-surface text-xs font-medium border border-border/50 text-muted-foreground hover:border-primary/50 hover:text-primary transition-all duration-300"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
+          {featuredProjects.map((project, index) => (
+            <ProjectCard key={project.slug} project={project} index={index} />
           ))}
         </div>
 
-{/* View All Projects Button */}
-<div className="text-center mt-12 animate-fade-in animation-delay-500">
-  <a 
-    href="https://github.com/iamdipesh18" 
-    target="_blank" 
-    rel="noopener noreferrer"
-  >
-    <AnimatedBorderButton>
-      View All Projects
-      <ArrowUpRight className="w-5 h-5" />
-    </AnimatedBorderButton>
-  </a>
-</div>
-
+        {/* View All Projects Button */}
+        <div className="text-center mt-12 animate-fade-in animation-delay-500">
+          <Link to="/projects">
+            <AnimatedBorderButton>
+              View All {projects.length} Projects
+              <ArrowUpRight className="w-5 h-5" />
+            </AnimatedBorderButton>
+          </Link>
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,12 @@
 import {Code2,Lightbulb,Rocket,Users}from "lucide-react";
+import { education } from "@/data/education";
+import { profile } from "@/data/profile";
+
+const facts = [
+    { label: "Education", value: `${education[0].degree}, IOE — ACEM` },
+    { label: "Engineering License", value: "NEC No. 94440" },
+    { label: "Languages", value: profile.languages.join(", ") },
+];
 
 const highlights=[
     {
@@ -60,6 +68,15 @@ export const About = () => {
                         My aim is to leverage my skills and passion for technology to contribute to impactful projects that enhance user experiences and drive innovation in the tech industry.
                     </p>
                 </div>
+                {/*Quick Facts*/}
+                <dl className="grid sm:grid-cols-3 gap-4 animate-fade-in animation-delay-400">
+                    {facts.map((fact) => (
+                        <div key={fact.label} className="glass rounded-xl p-4">
+                            <dt className="text-xs uppercase tracking-wider text-primary mb-1">{fact.label}</dt>
+                            <dd className="text-sm text-muted-foreground">{fact.value}</dd>
+                        </div>
+                    ))}
+                </dl>
                 </div>
                 {/*Right Column - Highlights*/}
                 <div className="grid sm:grid-cols-2 gap-6">

@@ -1,52 +1,10 @@
-// Experience data (same structure as tutorial)
-const experiences = [
-  {
-    period: "2025 — Present",
-    role: "Freelance Developer",
-    company: "Self-Employed",
-    description:
-      "Providing freelance development services, including web and mobile application development, to various clients. Specializing in full-stack development and UI/UX design.",
-    technologies: [
-      "JavaScript",
-      "React",
-      "Node.js",
-      "Python",
-      "Django",
-      "SQL",
-      "NoSQL",
-      "Git",
-      "Docker",
-    ],
-    current: true, // shows ping animation on timeline dot
-  },
-  {
-    period: "2025",
-    role: "Flutter Developer Intern",
-    company: "BentRay Technologies",
-    description:
-      "Worked on developing the mobile UI and maintaining the codebase of pre-existing applications. Collaborated with the design team to implement user-friendly interfaces and optimize app performance.",
-    technologies: ["Dart", "Flutter", "Git", "Firebase"],
-    current: false,
-  },
-  {
-    period: "2021 — 2024",
-    role: "Freelance Developer and Computer Engineering Student",
-    company: "Self-Employed",
-    description: "",
-    technologies: [
-      "JavaScript",
-      "React",
-      "Node.js",
-      "Python",
-      "Django",
-      "SQL",
-      "NoSQL",
-      "Git",
-      "Docker",
-    ],
-    current: false,
-  },
-];
+import { Link } from "react-router-dom";
+import { ArrowUpRight } from "lucide-react";
+import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import { Timeline } from "@/components/Timeline";
+import { experiences } from "@/data/experience";
+
+const featuredExperiences = experiences.filter((exp) => exp.featured);
 
 export const Experience = () => {
   return (
@@ -76,72 +34,16 @@ export const Experience = () => {
           </p>
         </div>
 
-        {/* Timeline wrapper */}
-        <div className="relative">
-          {/* Vertical timeline line */}
-          <div className="timeline-glow absolute left-0 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary/70 via-primary/30 to-transparent md:-translate-x-1/2 shadow-[0_0_25px_rgba(32,178,166,0.8)]" />
+        <Timeline items={featuredExperiences} />
 
-          {/* Experience Items */}
-          <div className="space-y-12">
-            {experiences.map((exp, idx) => (
-              <div
-                key={idx}
-                className="relative grid md:grid-cols-2 gap-8 animate-fade-in"
-                style={{ animationDelay: `${(idx + 1) * 150}ms` }}
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-0 md:left-1/2 top-0 w-3 h-3 bg-primary rounded-full -translate-x-1/2 ring-4 ring-background z-10">
-                  {/* Ping animation only for current role */}
-                  {exp.current && (
-                    <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75" />
-                  )}
-                </div>
-
-                {/* Content Card */}
-                <div
-                  className={`pl-8 md:pl-0 ${
-                    idx % 2 === 0
-                      ? "md:pr-16 md:text-right"
-                      : "md:col-start-2 md:pl-16"
-                  }`}
-                >
-                  <div className="glass p-6 rounded-2xl border border-primary/30 hover:border-primary/50 transition-all duration-500">
-                    <span className="text-sm text-primary font-medium">
-                      {exp.period}
-                    </span>
-
-                    <h3 className="text-xl font-semibold mt-2">
-                      {exp.role}
-                    </h3>
-
-                    <p className="text-muted-foreground">
-                      {exp.company}
-                    </p>
-
-                    <p className="text-sm text-muted-foreground mt-4">
-                      {exp.description}
-                    </p>
-
-                    {/* Technology badges */}
-                    <div
-                      className={`flex flex-wrap gap-2 mt-4 ${
-                        idx % 2 === 0 ? "md:justify-end" : ""
-                      }`}
-                    >
-                      {exp.technologies.map((tech, techIdx) => (
-                        <span
-                          key={techIdx}
-                          className="px-3 py-1 bg-surface text-xs rounded-full text-muted-foreground"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        {/* Full Journey Button */}
+        <div className="text-center mt-16 animate-fade-in animation-delay-500">
+          <Link to="/experience">
+            <AnimatedBorderButton>
+              See Full Journey ({experiences.length} roles)
+              <ArrowUpRight className="w-5 h-5" />
+            </AnimatedBorderButton>
+          </Link>
         </div>
       </div>
     </section>

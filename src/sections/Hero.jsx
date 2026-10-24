@@ -1,5 +1,3 @@
-import "@/index.css";
-import React from "react";
 import { Button } from "@/components/Button";
 import {
   ArrowRight,
@@ -9,31 +7,23 @@ import {
   Twitter,
   ChevronDown,
 } from "lucide-react";
-import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
+import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import { heroSkills } from "@/data/skills";
+import { profile } from "@/data/profile";
 
-const skills = [
-  "Web Development",
-  "Mobile Apps",
-  "UI/UX Design",
-  "Git and GitHub",
-  "React",
-  "Python",
-  "Flutter",
-  "Dart",
-  "CapCut",
-  "Figma",
-  "JavaScript",
-  "TypeScript",
-  "HTML5",
-  "CSS3",
-  "Tailwind CSS",
-  "Node.js",
-  "Express.js",
-  "MongoDB",
-  "SQL",
-  "RESTful APIs",
-  "Agile Methodologies",
+const socialLinks = [
+  { icon: Github, href: profile.links.github, label: "GitHub" },
+  { icon: Linkedin, href: profile.links.linkedin, label: "LinkedIn" },
+  { icon: Twitter, href: profile.links.twitter, label: "Twitter" },
 ];
+
+// Random placement and animation, generated once so dots don't jump on re-render
+const dots = Array.from({ length: 20 }, () => ({
+  left: `${Math.random() * 100}%`,
+  top: `${Math.random() * 100}%`,
+  animation: `slow-drift ${15 + Math.random() * 20}s ease-in-out infinite`,
+  animationDelay: `${Math.random() * 5}s`,
+}));
 
 export const Hero = () => {
   return (
@@ -50,20 +40,11 @@ export const Hero = () => {
 
       {/* Green Dots */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(20)].map((_, index) => (
+        {dots.map((dot, index) => (
           <div
             key={index}
             className="absolute w-1.5 h-1.5 rounded-full opacity-60"
-            style={{
-              backgroundColor: "#20B2A6",
-              // Random placement and animation
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animation: `slow-drift ${
-                15 + Math.random() * 20
-              }s ease-in-out infinite`,
-              animationDelay: `${Math.random() * 5}s`,
-            }}
+            style={{ backgroundColor: "#20B2A6", ...dot }}
           />
         ))}
       </div>
@@ -110,7 +91,7 @@ export const Hero = () => {
 
   {/* Download CV Button */}
   <a
-    href="./Dipesh_Dhungana_CV.pdf"
+    href={profile.cv}
     target="_blank"
     rel="noopener noreferrer"
   >
@@ -126,14 +107,13 @@ export const Hero = () => {
             <div className="flex items-center gap-4 animate-fade-in animation-delay-400">
               <span className="text-sm text-muted-foreground">Follow me:</span>
 
-              {[
-                  { icon: Github, href: "https://github.com/iamdipesh18", label: "GitHub" },
-                  { icon: Linkedin, href: "https://www.linkedin.com/in/dipesh-dhungana-3796482b3/", label: "LinkedIn" },
-                  { icon: Twitter, href: "https://x.com/iamdipesh18", label: "Twitter" },
-              ].map((social, index) => (
+              {socialLinks.map((social) => (
                 <a
-                  key={index}
+                  key={social.label}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.label}
                   className="p-2 rounded-full glass hover:bg-primary/10 hover:text-primary transition-all duration-300"
                 >
                   <social.icon className="w-5 h-5" />
@@ -188,7 +168,7 @@ export const Hero = () => {
 
           <div className="relative overflow-hidden">
             <div className="flex animate-marquee">
-              {[...skills, ...skills].map((skill, index) => (
+              {[...heroSkills, ...heroSkills].map((skill, index) => (
                 <div key={index} className="flex-shrink-0 px-8 py-4">
                   <span className="text-xl font-semibold text-muted-foreground/50 hover:text-muted-foreground transition-colors">
                     {skill}
