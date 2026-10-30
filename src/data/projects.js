@@ -88,6 +88,7 @@ export const projects = [
     tags: ["Flutter", "Dart", "Game Logic"],
     category: "mobile",
     featured: true,
+    image: "/Projects/Chess_Game.jpg",
     github: `${GITHUB}/chess_game`,
   },
   {
