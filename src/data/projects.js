@@ -71,6 +71,7 @@ export const projects = [
     tags: ["Flutter", "Firebase", "Cloud Firestore", "Provider"],
     category: "mobile",
     featured: true,
+    image: "/Projects/Kurakani.jpg",
     github: `${GITHUB}/kurakani`,
   },
   {
@@ -103,6 +104,7 @@ export const projects = [
     tags: ["Flutter", "BLoC", "Clean Architecture"],
     category: "mobile",
     featured: true,
+    image: "/Projects/Todo_App.jpg",
     github: `${GITHUB}/to_do_application`,
   },
   {
@@ -153,6 +155,7 @@ export const projects = [
     tags: ["Flutter", "Riverpod"],
     category: "mobile",
     featured: false,
+    image: "/Projects/LacedUp.jpg",
     github: `${GITHUB}/lacedup`,
   },
   {
@@ -183,6 +186,7 @@ export const projects = [
     tags: ["React", "TypeScript", "Vite", "Tailwind CSS"],
     category: "web",
     featured: false,
+    image: "/Projects/Trion_Clone.jpg",
     github: `${GITHUB}/Trion-Clone`,
     link: "https://trion-clone.vercel.app",
   },
@@ -215,6 +219,7 @@ export const projects = [
     tags: ["Flutter", "REST APIs"],
     category: "mobile",
     featured: false,
+    image: "/Projects/World_Time.jpg",
     github: `${GITHUB}/world_time_application`,
   },
   {
@@ -229,6 +234,7 @@ export const projects = [
     tags: ["Flutter", "Firebase", "Provider"],
     category: "mobile",
     featured: false,
+    image: "/Projects/My_Tea_Ghar.jpg",
     github: `${GITHUB}/my_tea_ghar`,
   },
   {
@@ -299,6 +305,7 @@ export const projects = [
     tags: ["MATLAB", "DSP"],
     category: "academic",
     featured: false,
+    image: "/Projects/DSP.jpg",
     github: `${GITHUB}/Digital-Signal-Analysis-and-Processing`,
   },
   {
@@ -313,6 +320,7 @@ export const projects = [
     tags: ["Python", "Simulation"],
     category: "academic",
     featured: false,
+    image: "/Projects/Simulation.jpg",
     github: `${GITHUB}/Simulation-Modeling`,
   },
   {
